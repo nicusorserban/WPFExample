@@ -12,10 +12,10 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="ChatBox" HorizontalAlignment="Stretch" />
-            <Button HorizontalAlignment="Right" Command="{Binding AddTextCommand}" CommandParameter="{Binding Path=Text,ElementName=ChatBox}">Send</Button>
+            <TextBox Grid.Column="0" x:Name="ChatBox" HorizontalAlignment="Stretch" Margin="0,8,4,8" />
+            <Button Grid.Column="1" HorizontalAlignment="Right" Command="{Binding AddTextCommand}" CommandParameter="{Binding Path=Text,ElementName=ChatBox}" Margin="4,8,8,8">Send</Button>
         </Grid>
-        <ListBox ItemsSource="{Binding Messages}">
+        <ListBox ItemsSource="{Binding Messages}" Margin="0,8,8,4">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>

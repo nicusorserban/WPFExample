@@ -20,7 +20,7 @@
             <ColumnDefinition Width="2"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="0" ItemsSource="{Binding Names}">
+        <ListBox Grid.Column="0" ItemsSource="{Binding Names}" Margin="8">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}" />
