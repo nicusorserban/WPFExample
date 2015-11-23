@@ -21,7 +21,7 @@
                     <TextBlock>
                         <Run Text="{Binding TimeStamp}" Foreground="Red"/>
                         <Run Text="{Binding From.Name}" Foreground="Green" />
-                        <Run Text="{Binding Message}" Foreground="Blue" />
+                        <Run Text="{Binding Text}" Foreground="Blue" />
                     </TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
