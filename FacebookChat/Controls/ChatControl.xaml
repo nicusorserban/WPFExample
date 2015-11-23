@@ -12,8 +12,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="ChatBox" Text="{Binding CurrentText}" HorizontalAlignment="Stretch" />
-            <Button HorizontalAlignment="Right" Command="{Binding AddText}" CommandParameter="{Binding Path=Text,ElementName=ChatBox}">Send</Button>
+            <TextBox x:Name="ChatBox" HorizontalAlignment="Stretch" />
+            <Button HorizontalAlignment="Right" Command="{Binding AddTextCommand}" CommandParameter="{Binding Path=Text,ElementName=ChatBox}">Send</Button>
         </Grid>
         <ListBox ItemsSource="{Binding Messages}">
             <ListBox.ItemTemplate>
@@ -21,7 +21,7 @@
                     <TextBlock>
                         <Run Text="{Binding TimeStamp}" Foreground="Red"/>
                         <Run Text="{Binding From.Name}" Foreground="Green" />
-                        <Run Text="{Binding Message}" />
+                        <Run Text="{Binding Message}" Foreground="Blue" />
                     </TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
