@@ -2,11 +2,7 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace FacebookChat.ViewModels
@@ -16,21 +12,20 @@ namespace FacebookChat.ViewModels
         private ICommand _addTextCommand;
         public ICommand AddTextCommand
         {
-            get { return _addTextCommand ?? new RelayCommand(AddText); }
+            get { return _addTextCommand ?? new RelayCommand<string>(AddText); }
         }
 
-        public string CurrentText { get; set; }
         public FacebookIdentity CurrentIdentity { get; set; }
 
         public ObservableCollection<ChatMessage> Messages { get; private set; }
 
-        private void AddText()
+        private void AddText(string parameter)
         {
             var chatMessage = new ChatMessage
             {
                 TimeStamp = DateTime.Now,
                 From = CurrentIdentity,
-                Text = CurrentText
+                Text = parameter
             };
             Messages.Add(chatMessage);
         }

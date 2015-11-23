@@ -12,8 +12,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBox Text="{Binding CurrentText}" HorizontalAlignment="Stretch" />
-            <Button Command="{Binding AddText}" HorizontalAlignment="Right">Send</Button>
+            <TextBox x:Name="ChatBox" Text="{Binding CurrentText}" HorizontalAlignment="Stretch" />
+            <Button HorizontalAlignment="Right" Command="{Binding AddText}" CommandParameter="{Binding Path=Text,ElementName=ChatBox}">Send</Button>
         </Grid>
         <ListBox ItemsSource="{Binding Messages}">
             <ListBox.ItemTemplate>

@@ -29,6 +29,6 @@
         </ListBox>
         
         <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <controls:ChatControl Grid.Column="2" />
+        <controls:ChatControl Grid.Column="2" DataContext="{Binding Chat}" />
     </Grid>
 </Window>
